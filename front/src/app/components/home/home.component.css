@@ -1,0 +1,31 @@
+.orange:hover{
+    color: orange;
+}
+
+.green:hover{
+    color: green;
+}
+
+.blue:hover{
+    color: blue;
+}
+
+.yellow:hover{
+    color: rgb(226, 196, 0);
+}
+
+.yellow{
+    border-color: rgb(226, 196, 0);
+}
+
+.red:hover{
+    color: crimson;
+}
+
+.purple:hover{
+    color: blueviolet;
+}
+
+.purple{
+    border-color: blueviolet;
+}

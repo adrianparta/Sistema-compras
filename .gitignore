@@ -1,0 +1,30 @@
+# ===== General =====
+.DS_Store
+Thumbs.db
+*.log
+
+# ===== Java / Maven / Spring =====
+back/target/
+**/target/
+*.jar
+*.war
+.mvn/wrapper/maven-wrapper.jar
+
+# IDE
+.idea/
+*.iml
+.vscode/
+.settings/
+.project
+.classpath
+
+# ===== Angular / Node =====
+front/node_modules/
+**/node_modules/
+front/dist/
+**/dist/
+.angular/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
