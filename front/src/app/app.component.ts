@@ -25,7 +25,7 @@ export class AppComponent implements OnInit{
       usuario: '',
       contrasenia: ''
     };
-    this.acceso = false;
+    this.acceso = true;
     this.usuario.usuario = '';
     this.usuario.contrasenia = '';
     this.mostrarErrores = false;
