@@ -25,7 +25,7 @@ import com.bootcamp.proyectointegrador.Services.RubroService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/rubros/")
+@RequestMapping("/api/rubros/")
 @CrossOrigin(origins = "http://localhost:4200")
 public class RubroController {
 
