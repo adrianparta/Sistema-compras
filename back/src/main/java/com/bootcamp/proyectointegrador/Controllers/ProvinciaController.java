@@ -16,7 +16,7 @@ import com.bootcamp.proyectointegrador.Services.ProvinciaService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/provincias/")
+@RequestMapping("/api/provincias/")
 public class ProvinciaController {
 
 	@Autowired

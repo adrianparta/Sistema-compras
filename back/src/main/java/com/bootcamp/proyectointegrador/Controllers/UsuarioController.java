@@ -14,7 +14,7 @@ import com.bootcamp.proyectointegrador.Services.UsuarioService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/usuarios/")
+@RequestMapping("/api/usuarios/")
 public class UsuarioController {
 
 	@Autowired
