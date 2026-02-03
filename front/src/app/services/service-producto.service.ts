@@ -5,58 +5,78 @@ import { Producto } from '../models/producto';
 import { Categoria } from '../models/categoria';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ProductoService {
-  
   constructor(private http: HttpClient) {}
-  url = 'http://localhost:8080/productos/';
-  
-  agregarProducto(producto: Producto): Observable<Producto>{
+  url = 'https://sistema-compras-oggn.onrender.com/api/productos/';
+
+  agregarProducto(producto: Producto): Observable<Producto> {
     return this.http.post<Producto>(this.url, producto);
   }
 
-  public obtenerProductos(): Observable<Producto[]>{
+  public obtenerProductos(): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.url);
   }
-  
-  public obtenerProductosPorEstado(estado: boolean): Observable<Producto[]>{
+
+  public obtenerProductosPorEstado(estado: boolean): Observable<Producto[]> {
     return this.http.get<Producto[]>(this.url + 'estado/' + estado);
   }
-  
-  public obtenerProductosPorProveedor(id: number, estado: boolean): Observable<Producto[]>{
-    return this.http.get<Producto[]>(this.url + 'proveedor/' + id + '/' + estado);
+
+  public obtenerProductosPorProveedor(
+    id: number,
+    estado: boolean,
+  ): Observable<Producto[]> {
+    return this.http.get<Producto[]>(
+      this.url + 'proveedor/' + id + '/' + estado,
+    );
   }
 
-  public obtenerProductosPorCategoria(id: number, estado: boolean): Observable<Producto[]>{
-    return this.http.get<Producto[]>(this.url + 'categoria/' + id + '/' + estado);
+  public obtenerProductosPorCategoria(
+    id: number,
+    estado: boolean,
+  ): Observable<Producto[]> {
+    return this.http.get<Producto[]>(
+      this.url + 'categoria/' + id + '/' + estado,
+    );
   }
 
-  public obtenerProducto(id: number): Observable<Producto>{
+  public obtenerProducto(id: number): Observable<Producto> {
     return this.http.get<Producto>(this.url + id);
   }
-  
-  public modificarProducto(producto: Producto): Observable<Producto>{
+
+  public modificarProducto(producto: Producto): Observable<Producto> {
     return this.http.put<Producto>(this.url + producto.id, producto);
   }
-  
-  public modificarEstadoProducto(id: number | undefined): Observable<Producto>{
+
+  public modificarEstadoProducto(id: number | undefined): Observable<Producto> {
     return this.http.put<Producto>(this.url + id + '/estado', {});
   }
 
-  public agregarCategoria(categoria: string): Observable<Categoria>{
-    return this.http.post<Categoria>('http://localhost:8080/categorias/', {"categoria": categoria});
+  public agregarCategoria(categoria: string): Observable<Categoria> {
+    return this.http.post<Categoria>(
+      'https://sistema-compras-oggn.onrender.com/api/categorias/',
+      { categoria: categoria },
+    );
   }
 
-  public obtenerCategorias(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('http://localhost:8080/categorias/');
-  }
-  
-  public obtenerCategoriasActivas(): Observable<Categoria[]>{
-    return this.http.get<Categoria[]>('http://localhost:8080/categorias/activas');
+  public obtenerCategorias(): Observable<Categoria[]> {
+    return this.http.get<Categoria[]>(
+      'https://sistema-compras-oggn.onrender.com/api/categorias/',
+    );
   }
 
-  public modificarCategoria(categoria: Categoria): Observable<Categoria>{
-    return this.http.put<Categoria>('http://localhost:8080/categorias/' + categoria.id, categoria);
+  public obtenerCategoriasActivas(): Observable<Categoria[]> {
+    return this.http.get<Categoria[]>(
+      'https://sistema-compras-oggn.onrender.com/api/categorias/activas',
+    );
+  }
+
+  public modificarCategoria(categoria: Categoria): Observable<Categoria> {
+    return this.http.put<Categoria>(
+      'https://sistema-compras-oggn.onrender.com/api/categorias/' +
+        categoria.id,
+      categoria,
+    );
   }
 }

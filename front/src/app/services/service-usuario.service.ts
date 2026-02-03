@@ -4,13 +4,17 @@ import { Observable } from 'rxjs';
 import { Usuario } from '../models/usuario';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ServiceUsuarioService {
-
   constructor(private http: HttpClient) {}
 
-  public solicitarAcceso(usuario: Usuario): Observable<boolean>{    
-    return this.http.get<boolean>('http://localhost:8080/usuarios/' + usuario.usuario + '/' + usuario.contrasenia);
+  public solicitarAcceso(usuario: Usuario): Observable<boolean> {
+    return this.http.get<boolean>(
+      'https://sistema-compras-oggn.onrender.com/api/usuarios/' +
+        usuario.usuario +
+        '/' +
+        usuario.contrasenia,
+    );
   }
 }
