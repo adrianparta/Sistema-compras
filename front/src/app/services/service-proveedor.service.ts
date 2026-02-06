@@ -11,17 +11,16 @@ import { Iva } from '../models/iva';
   providedIn: 'root',
 })
 export class ProveedorService {
-  url = 'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/proveedores/';
+  url = 'https://sistema-compras-oggn.onrender.com/api/proveedores/';
 
   obtenerPaises(): Observable<Pais[]> {
     return this.http.get<Pais[]>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/paises/',
+      'https://sistema-compras-oggn.onrender.com/api/paises/',
     );
   }
   obtenerProvincias(paisId: number): Observable<Provincia[]> {
     return this.http.get<Provincia[]>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/provincias/' +
-        paisId,
+      'https://sistema-compras-oggn.onrender.com/api/provincias/' + paisId,
     );
   }
 
@@ -55,19 +54,19 @@ export class ProveedorService {
 
   public obtenerRubros(): Observable<Rubro[]> {
     return this.http.get<Rubro[]>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/rubros/',
+      'https://sistema-compras-oggn.onrender.com/api/rubros/',
     );
   }
 
   public obtenerRubrosActivos(): Observable<any> {
     return this.http.get<any>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/rubros/activos',
+      'https://sistema-compras-oggn.onrender.com/api/rubros/activos',
     );
   }
 
   public obtenerRubro(id: number): Observable<Rubro> {
     return this.http.get<Rubro>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/rubros/' + id,
+      'https://sistema-compras-oggn.onrender.com/api/rubros/' + id,
     );
   }
 
@@ -78,7 +77,7 @@ export class ProveedorService {
     console.log(rubro);
 
     return this.http.post<Rubro>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/rubros/',
+      'https://sistema-compras-oggn.onrender.com/api/rubros/',
       rubro,
     );
   }
@@ -87,14 +86,14 @@ export class ProveedorService {
     console.log(rubro);
 
     return this.http.put<Rubro>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/rubros/' + rubro.id,
+      'https://sistema-compras-oggn.onrender.com/api/rubros/' + rubro.id,
       rubro,
     );
   }
 
   public obtenerIvas(): Observable<Iva[]> {
     return this.http.get<Iva[]>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/ivas/',
+      'https://sistema-compras-oggn.onrender.com/api/ivas/',
     );
   }
 }

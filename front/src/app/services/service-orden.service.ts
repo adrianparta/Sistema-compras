@@ -10,7 +10,7 @@ import { identifierName } from '@angular/compiler';
 export class ServiceOrdenService {
   constructor(private http: HttpClient) {}
 
-  url = 'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/ordenes/';
+  url = 'https://sistema-compras-oggn.onrender.com/api/ordenes/';
 
   public agregarOrden(orden: Orden): Observable<Orden> {
     console.log(orden);

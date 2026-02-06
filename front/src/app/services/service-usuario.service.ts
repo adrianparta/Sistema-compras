@@ -11,7 +11,7 @@ export class ServiceUsuarioService {
 
   public solicitarAcceso(usuario: Usuario): Observable<boolean> {
     return this.http.get<boolean>(
-      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/usuarios/' +
+      'https://sistema-compras-oggn.onrender.com/api/usuarios/' +
         usuario.usuario +
         '/' +
         usuario.contrasenia,
