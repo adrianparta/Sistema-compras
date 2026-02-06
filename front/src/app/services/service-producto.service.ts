@@ -9,7 +9,7 @@ import { Categoria } from '../models/categoria';
 })
 export class ProductoService {
   constructor(private http: HttpClient) {}
-  url = 'https://sistema-compras-oggn.onrender.com/api/productos/';
+  url = 'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/productos/';
 
   agregarProducto(producto: Producto): Observable<Producto> {
     return this.http.post<Producto>(this.url, producto);
@@ -55,26 +55,26 @@ export class ProductoService {
 
   public agregarCategoria(categoria: string): Observable<Categoria> {
     return this.http.post<Categoria>(
-      'https://sistema-compras-oggn.onrender.com/api/categorias/',
+      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/categorias/',
       { categoria: categoria },
     );
   }
 
   public obtenerCategorias(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(
-      'https://sistema-compras-oggn.onrender.com/api/categorias/',
+      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/categorias/',
     );
   }
 
   public obtenerCategoriasActivas(): Observable<Categoria[]> {
     return this.http.get<Categoria[]>(
-      'https://sistema-compras-oggn.onrender.com/api/categorias/activas',
+      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/categorias/activas',
     );
   }
 
   public modificarCategoria(categoria: Categoria): Observable<Categoria> {
     return this.http.put<Categoria>(
-      'https://sistema-compras-oggn.onrender.com/api/categorias/' +
+      'https://agreed-sloth-asjserv-74462f81.koyeb.app//api/categorias/' +
         categoria.id,
       categoria,
     );
